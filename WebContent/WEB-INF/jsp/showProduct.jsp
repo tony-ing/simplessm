@@ -28,7 +28,7 @@
 		<form method="post" action="addProduct" onsubmit ="return checkform(this)">
 			productname： <input id ="pname" name="name" value="" type="text" required> <br><br>
 			productprice： <input id = "pprice" name="price" value="" type="text" required> <br><br>
-			CategoryId:<input name="category.id" value="${category.id}" > <br><br>
+			CategoryId:<input id="category.id" value="" type = "text"> <br><br>
 			<input type="submit" value="增加产品" onclick="checkempty()">
 		</form>
 		

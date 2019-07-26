@@ -1,10 +1,13 @@
 package com.how2java.controller;
  
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -75,6 +78,15 @@ public class CategoryController {
    	ModelAndView mav = new ModelAndView("redirect:/listCategory");
    	return mav;
    	
+   }
+   @RequestMapping("/date/{localDate}")
+   public ModelAndView date(@DateTimeFormat(iso = ISO.DATE) LocalDate localDate)
+   {
+	 String currDate = localDate.toString();
+	 ModelAndView mav = new ModelAndView("date");
+	 mav.addObject("d", currDate);
+	 System.out.println(currDate);
+     return mav;
    }
    
  

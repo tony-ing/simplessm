@@ -29,4 +29,6 @@
 		</form>
 
 <p><a href="listProduct"/> All Product</p>
+<p><a href="date"/> Display Date</p>
+
 

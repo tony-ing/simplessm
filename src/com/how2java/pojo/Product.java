@@ -1,12 +1,23 @@
 package com.how2java.pojo;
 
+import java.time.LocalDate;
+import java.sql.Date;
+import java.sql.Timestamp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Product {
 	
 	private int id;
 	private String name;
 	private float price;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date addDate;
+	
+	@Autowired
 	private Category category;
 	private int cid;
+	
 	
 	
 	 public int getId() {
@@ -43,9 +54,24 @@ public class Product {
 		public int getCid() {
 			return cid;
 		}
+		
+		public void setDate(Date addDate) {
+			this.addDate = addDate;
+		}
+		
+		public Date getDate() {
+			return addDate;
+		}
+		
+		
 		@Override
 		public String toString() {
-			return "Product [id=" + id + ", name=" + name + ", price=" + price + ", category=" + category + "]";
+			return "Product [id=" + id + ", name=" + name + ", price=" + price + ", addDate=" + addDate + ", category="
+					+ category + ", cid=" + cid + "]";
 		}
+		public void printThrowException(){
+		       System.out.println("Exception raised");
+		       throw new IllegalArgumentException();
+		   }
 
 }

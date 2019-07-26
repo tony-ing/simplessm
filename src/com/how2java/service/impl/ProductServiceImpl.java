@@ -2,17 +2,21 @@ package com.how2java.service.impl;
  
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
- 
+import org.aspectj.lang.annotation.Aspect;
 import com.how2java.mapper.ProductMapper;
 import com.how2java.pojo.Product;
 import com.how2java.service.ProductService;
  
 @Service
+@Aspect
 public class ProductServiceImpl  implements ProductService{
     @Autowired
+    
+ 
     ProductMapper productMapper;
      
     public List<Product> list(){

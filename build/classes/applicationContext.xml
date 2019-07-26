@@ -40,5 +40,17 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.how2java.mapper"/>
     </bean>
+ 
+     
+   <bean id="loggerAspect" class="com.how2java.aop.Logging"/>
+    <aop:config>
+        <aop:pointcut id="loggerCutpoint"
+            expression=
+            "execution(* com.how2java.service.impl.ProductServiceImpl.*(..)) "/>
+          <aop:aspect id="logAspect" ref="loggerAspect">
+            <aop:around pointcut-ref="loggerCutpoint" method="log"/>
+        </aop:aspect>
+    </aop:config>  
+    
      
 </beans>

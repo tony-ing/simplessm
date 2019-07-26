@@ -20,4 +20,8 @@ public class Category {
         return "Category [id=" + id + ", name=" + name + "]";
     }
      
+    public void printThrowException(){
+        System.out.println("Exception raised");
+        throw new IllegalArgumentException();
+    }
 }

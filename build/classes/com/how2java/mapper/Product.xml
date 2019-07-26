@@ -9,14 +9,14 @@
             <id column="pid" property="id" />
             <result column="pname" property="name" />
             <result column="price" property="price" />
-     		
+     		<result column="pdate" property="addDate"/>
             <association property="category" javaType="Category">
                 <id column="cid" property="id"/>
                 <result column="cname" property="name"/>
             </association>
         </resultMap>
         <insert id="add" parameterType="Product" >
-            insert into product_ ( name, price) values (#{name}, #{price})   
+            insert into product_ ( name, price, cid, addDate) values (#{name}, #{price}, #{cid}, NOW())   
         </insert>
          
         <delete id="delete" parameterType="Product" >
@@ -32,7 +32,7 @@
         </select>
  
         <update id="update" parameterType="Product" >
-            update product_ set name=#{name}, cid =#{category.id} where id=#{id}   
+            update product_ set name=#{name}, cid =#{category.id}, addDate= NOW() where id=#{id}   
         </update>
         <select id="list" resultType="Product">
             select * from   product_     
