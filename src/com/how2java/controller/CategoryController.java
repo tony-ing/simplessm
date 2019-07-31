@@ -79,7 +79,7 @@ public class CategoryController {
    	return mav;
    	
    }
-   @RequestMapping("/date/{localDate}")
+   @RequestMapping("showdate")
    public ModelAndView date(@DateTimeFormat(iso = ISO.DATE) LocalDate localDate)
    {
 	 String currDate = localDate.toString();

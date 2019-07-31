@@ -47,23 +47,23 @@ public class Product {
 			this.category = category;
 		}
 		
-		public void setCid(int cid) {
-			this.cid = cid;
-		}
+	
+		
+	
+		
 		
 		public int getCid() {
 			return cid;
 		}
-		
-		public void setDate(Date addDate) {
-			this.addDate = addDate;
+		public void setCid(int cid) {
+			this.cid = cid;
 		}
-		
-		public Date getDate() {
+		public Date getAddDate() {
 			return addDate;
 		}
-		
-		
+		public void setAddDate(Date addDate) {
+			this.addDate = addDate;
+		}
 		@Override
 		public String toString() {
 			return "Product [id=" + id + ", name=" + name + ", price=" + price + ", addDate=" + addDate + ", category="

@@ -18,9 +18,7 @@
             <td>${c.id}</td>
             <td>${c.name}</td>
             <td>${c.price}</td>
-            <td>
-            	<fmt:formatDate value="${c.addDate}" pattern="yyyy-MM-dd"/>
-            </td>
+        	<td>${c.addDate}</td>
             <td><a href="editProduct?id=${c.id}">edit</td>  
             <td><a href="deleteProduct?id=${c.id}">delete</td>   
         </tr>
@@ -28,14 +26,15 @@
 </table>
 
 <br>
+<p> Add New Proeuct</p>
 		<form method="post" action="addProduct" onsubmit ="return checkform(this)">
-			productname:  <input name="name" value="" type="text" required> <br><br>
-			productprice: <input name="price" value="" type="text" required> <br><br>
+			Product name:  <input name="name" value="" type="text" required> <br><br>
+			Product price: <input name="price" value="" type="text" required> <br><br>
 						 <!--  <input name="category.id" value="${category.id}" type = "hidden"> --><br><br>
 			<input type="submit" value="增加产品">
 		</form>
 		
-<br>
-<br>
+
+
 <p><a href = "listCategory"/> All Category</p>
 
